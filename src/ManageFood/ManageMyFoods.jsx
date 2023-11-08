@@ -3,8 +3,14 @@ import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const ManageMyFoods = () => {
-  const [emailBasedDonatedFoods, setEmailBasedDonatedFoods] = useState([]);
-  console.log(emailBasedDonatedFoods);
+  const [emailBasedDonatedFoodsPrev, setEmailBasedDonatedFoodsPrev] = useState(
+    []
+  );
+  const [emailBasedDonatedFoods, setEmailBasedDonatedFoods] = useState(
+    emailBasedDonatedFoodsPrev
+  );
+
+  console.log(emailBasedDonatedFoodsPrev);
 
   const {
     _id,
@@ -63,6 +69,11 @@ const ManageMyFoods = () => {
                 text: "Your food has been deleted.",
                 icon: "success",
               });
+
+              const remaining = emailBasedDonatedFoods.filter(
+                (emailBasedDonatedFood) => emailBasedDonatedFood._id !== id
+              );
+              setEmailBasedDonatedFoods(remaining);
             }
           });
       }
