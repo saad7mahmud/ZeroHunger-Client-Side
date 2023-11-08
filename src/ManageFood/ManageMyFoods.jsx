@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 const ManageMyFoods = () => {
   const [emailBasedDonatedFoods, setEmailBasedDonatedFoods] = useState([]);
   console.log(emailBasedDonatedFoods);
@@ -36,6 +37,37 @@ const ManageMyFoods = () => {
         setEmailBasedDonatedFoods(data);
       });
   }, [url]);
+
+  // Delete Food
+  const handleDelete = (id) => {
+    console.log(id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/available-foods-delete/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your food has been deleted.",
+                icon: "success",
+              });
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div>
@@ -84,7 +116,10 @@ const ManageMyFoods = () => {
                       <button className="btn m-2 btn-primary btn-xs">
                         Edit
                       </button>
-                      <button className="btn m-2  btn-primary btn-xs">
+                      <button
+                        onClick={() => handleDelete(emailBasedDonatedFood._id)}
+                        className="btn m-2 text-white btn-error btn-xs"
+                      >
                         Delete
                       </button>
                       <Link to={`/manage-a-food/${emailBasedDonatedFood._id}`}>
