@@ -103,20 +103,20 @@ const ManageMyFoods = () => {
                             />
                           </div>
                         </div>
-                        <div>
-                          <div className="font-bold">
+                        <div className="">
+                          <div className="font-semibold my-2 text-3xl">
                             {emailBasedDonatedFood.foodName}
                           </div>
-                          <div className="text-sm opacity-50">
+                          <div className="text-md opacity-50">
                             Food Id: {emailBasedDonatedFood._id}
                           </div>
-                          <div className="text-sm opacity-50">
+                          <div className="text-md opacity-50">
                             Location: {emailBasedDonatedFood.foodPickUpLocation}
                           </div>
-                          <div className="text-sm opacity-50">
+                          <div className="text-md opacity-50">
                             Expiry Date: {emailBasedDonatedFood.foodExpiryDate}
                           </div>
-                          <div className="text-sm opacity-50">
+                          <div className="text-md opacity-50">
                             Donator Email: {emailBasedDonatedFood.donatorEmail}
                           </div>
                         </div>
@@ -124,21 +124,27 @@ const ManageMyFoods = () => {
                     </td>
 
                     <th>
-                      <Link to={`/update-food/${emailBasedDonatedFood._id}`}>
-                        <button className="btn m-2 btn-primary btn-xs">
+                      <Link
+                        className="m-2"
+                        to={`/update-food/${emailBasedDonatedFood._id}`}
+                      >
+                        <button className="hover:cursor-pointer    mx-auto select-none rounded-lg bg-gradient-to-tr from-[#32a374] to-[#57b38d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                           Edit
                         </button>
                       </Link>
                       <button
                         onClick={() => handleDelete(emailBasedDonatedFood._id)}
-                        className="btn m-2 text-white btn-error btn-xs"
+                        className="m-2 hover:cursor-pointer   mx-auto  select-none rounded-lg bg-gradient-to-tr from-[#ec5252] to-[#cf4242] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                       >
                         Delete
                       </button>
-                      <Link to={`/manage-a-food/${emailBasedDonatedFood._id}`}>
+                      <Link
+                        className="m-2"
+                        to={`/manage-a-food/${emailBasedDonatedFood._id}`}
+                      >
                         <button
                           onClick={() => handleManageFood()}
-                          className="btn m-2  btn-primary btn-xs"
+                          className="hover:cursor-pointer   mx-auto select-none rounded-lg bg-gradient-to-tr from-[#327fa3] to-[#57a1b3] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         >
                           Manage
                         </button>
