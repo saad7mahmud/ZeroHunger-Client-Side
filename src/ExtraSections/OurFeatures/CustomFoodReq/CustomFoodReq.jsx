@@ -20,7 +20,7 @@ const CustomFoodReq = () => {
     Swal.fire({
       // position: "top-end",
       icon: "success",
-      title: "Review Sent",
+      title: "Request Sent",
       showConfirmButton: false,
       timer: 1500,
     });
