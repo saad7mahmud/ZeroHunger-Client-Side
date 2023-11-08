@@ -2,10 +2,49 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { useEffect } from "react";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const MyFoodRequest = () => {
-  const [requestedFoods, setRequestedFoods] = useState([]);
+  const [requestedFoodsPrev, setRequestedFoodsPrev] = useState([]);
+  const [requestedFoods, setRequestedFoods] = useState(requestedFoodsPrev);
+
   console.log(requestedFoods);
+
+  // delete request
+  const handleRequestDelete = (id) => {
+    console.log(id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/requested-food-delete/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your requested food has been deleted.",
+                icon: "success",
+              });
+
+              const remaining = requestedFoods.filter(
+                (requestedFood) => requestedFood._id !== id
+              );
+              setRequestedFoods(remaining);
+            }
+          });
+      }
+    });
+  };
 
   const {
     _id,
@@ -93,13 +132,18 @@ const MyFoodRequest = () => {
                       </div>
                     </td>
 
-                    <th>
-                      <td>Status: {requestedFood.foodStatus}</td>
-                    </th>
+                    <td>
+                      <p className="text-white text-center  bg-[#3250a3]">
+                        Status: {requestedFood.foodStatus}
+                      </p>
+                    </td>
 
                     <th>
                       {requestedFood.foodStatus !== "Delivered" ? (
-                        <button className="btn m-2 btn-primary btn-xs">
+                        <button
+                          onClick={() => handleRequestDelete(requestedFood._id)}
+                          className="hover:cursor-pointer block my-10 mx-auto select-none rounded-lg bg-gradient-to-tr from-[#32a374] to-[#57b38d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        >
                           Cancel Request
                         </button>
                       ) : (
