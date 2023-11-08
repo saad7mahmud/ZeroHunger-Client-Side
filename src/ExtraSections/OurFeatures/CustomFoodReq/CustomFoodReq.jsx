@@ -1,11 +1,7 @@
-import { useContext } from "react";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { AuthContext } from "../../../provider/AuthProvider";
 
 const CustomFoodReq = () => {
-  const { user } = useContext(AuthContext);
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [feedback, setFeedback] = useState("");
