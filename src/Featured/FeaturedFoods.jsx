@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const FeaturedFoods = () => {
   const [availableFood, setAvailableFood] = useState([]);
-  const slicedAvailableFoods = availableFood.slice(0, 4);
+  const slicedAvailableFoods = availableFood.slice(0, 6);
   console.log(slicedAvailableFoods);
 
   const url = "http://localhost:5000/available-foods-feature";
