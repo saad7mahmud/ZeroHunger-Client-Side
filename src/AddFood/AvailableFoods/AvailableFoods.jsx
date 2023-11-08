@@ -2,11 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import AvailableFoodsCard from "./AvailableFoodsCard";
 
 const AvailableFoods = () => {
+  const availableFoods = useLoaderData();
 
-
-    const availableFoods = useLoaderData();
-    
-    
   console.log(availableFoods);
   return (
     <div>

@@ -4,7 +4,7 @@ const Banner = () => {
       <div data-aos="fade-left" className=" mt-10 mb-10   bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse p-10">
           <img
-            src="https://i.ibb.co/n89prrw/serving-food-960x400px.jpg"
+            src="https://i.ibb.co/5cXdVdF/food-bloggers.jpg"
             className="max-w-xl rounded-lg shadow-2xl"
           />
           <div>
@@ -20,8 +20,11 @@ const Banner = () => {
               At ZeroHunger, we are on a mission to create a world where no one
               has to go to bed hungry. Our platform is a hub for communities to
               come together and share surplus food,
-              <span className="text-[#57b38d] font-semibold italic"> reducing waste</span> and
-              alleviating food insecurity. We believe that food should be
+              <span className="text-[#57b38d] font-semibold italic">
+                {" "}
+                reducing waste
+              </span>{" "}
+              and alleviating food insecurity. We believe that food should be
               shared, not wasted, and that every meal can make a difference.
             </p>
           </div>
