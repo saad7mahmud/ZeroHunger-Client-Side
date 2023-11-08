@@ -12,6 +12,7 @@ import Modal from "./../AddFood/DateSortingComponent";
 import ManageMyFoods from "../ManageFood/ManageMyFoods";
 import MyFoodRequest from "../FoodRequest/MyFoodRequest";
 import ManageAFood from "../ManageAFood/ManageAFood";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -33,20 +34,31 @@ export const router = createBrowserRouter([
       },
       {
         path: "/addFood",
-        element: <AddFood></AddFood>,
+        element: (
+          <PrivateRoute>
+            <AddFood></AddFood>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/manage-my-food",
-        element: <ManageMyFoods></ManageMyFoods>,
+        element: (
+          <PrivateRoute>
+            <ManageMyFoods></ManageMyFoods>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/requested-foods",
-        element: <MyFoodRequest></MyFoodRequest>,
+        element: (
+          <PrivateRoute>
+            <MyFoodRequest></MyFoodRequest>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/manage-a-food/:id",
         element: <ManageAFood></ManageAFood>,
-        
       },
 
       {

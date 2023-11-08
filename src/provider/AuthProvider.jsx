@@ -24,6 +24,7 @@ const AuthProvider = ({ children }) => {
 
   // Create User by email and pass
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -42,12 +43,14 @@ const AuthProvider = ({ children }) => {
 
   // Logout
   const logOut = () => {
-    // setLoading(true);
+    setLoading(true);
     return signOut(auth);
   };
 
   // Update User
   const updateUser = (displayName, photoURL) => {
+    setLoading(true);
+
     updateProfile(auth.currentUser, {
       displayName: displayName,
       photoURL: photoURL,
@@ -66,14 +69,14 @@ const AuthProvider = ({ children }) => {
     onAuthStateChanged(auth, (currentUser) => {
       console.log("user on onAuthStateChanged", user);
       setUser(currentUser);
-      //   setLoading(false);
+        setLoading(false);
     });
   }, [user]);
 
   // Google Sign In
   const provider = new GoogleAuthProvider();
   const googleSignIn = () => {
-    // setLoading(true);
+    setLoading(true);
     return signInWithPopup(auth, provider)
       .then((result) => {
         Swal.fire({
@@ -103,6 +106,7 @@ const AuthProvider = ({ children }) => {
     googleSignIn,
     logIn,
     logOut,
+    loading
   };
   return (
     <div>
