@@ -13,6 +13,7 @@ import ManageMyFoods from "../ManageFood/ManageMyFoods";
 import MyFoodRequest from "../FoodRequest/MyFoodRequest";
 import ManageAFood from "../ManageAFood/ManageAFood";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import UpdateFood from "../UpdateFood/UpdateFood";
 
 export const router = createBrowserRouter([
   {
@@ -75,6 +76,12 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/available-foods/${params.id}`),
+      },
+      {
+        path: "/update-food/:id",
+        element: <UpdateFood></UpdateFood>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/available-foods-update/${params.id}`),
       },
     ],
   },

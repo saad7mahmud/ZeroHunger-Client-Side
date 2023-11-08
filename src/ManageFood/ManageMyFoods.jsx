@@ -124,9 +124,11 @@ const ManageMyFoods = () => {
                     </td>
 
                     <th>
-                      <button className="btn m-2 btn-primary btn-xs">
-                        Edit
-                      </button>
+                      <Link to={`/update-food/${emailBasedDonatedFood._id}`}>
+                        <button className="btn m-2 btn-primary btn-xs">
+                          Edit
+                        </button>
+                      </Link>
                       <button
                         onClick={() => handleDelete(emailBasedDonatedFood._id)}
                         className="btn m-2 text-white btn-error btn-xs"
