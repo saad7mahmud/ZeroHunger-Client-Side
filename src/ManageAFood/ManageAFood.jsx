@@ -162,7 +162,7 @@ const ManageAFood = () => {
                                   .getElementById("my_modal_5")
                                   .showModal()
                               }
-                              className="hover:cursor-pointer    mx-auto select-none rounded-lg bg-gradient-to-tr from-[#32a374] to-[#57b38d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase  shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-80 disabled:shadow-none"
+                              className="hover:cursor-pointer    mx-auto select-none rounded-lg bg-gradient-to-tr btn py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase  shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-80 disabled:shadow-none"
                             >
                               Change Status
                             </button>
