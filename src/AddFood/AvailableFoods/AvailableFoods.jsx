@@ -83,7 +83,7 @@ const AvailableFoods = () => {
           <p className="m-5 text-center">Searching: {search}</p>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-10 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5">
         {availableFoods.map((availableFood) => (
           <AvailableFoodsCard
             key={availableFood._id}

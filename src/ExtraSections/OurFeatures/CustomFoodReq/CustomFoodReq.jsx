@@ -86,7 +86,7 @@ const CustomFoodReq = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-[#57b38d]  rounded-md py-2 px-4 hover:bg-[#32a374] focus:outline-none focus:ring focus:border-blue-300"
+              className=" rounded-md py-2 px-4 btn focus:outline-none focus:ring focus:border-blue-300"
             >
               Send Request
             </button>

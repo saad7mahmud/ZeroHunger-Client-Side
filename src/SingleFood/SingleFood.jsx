@@ -99,8 +99,8 @@ const SingleFood = () => {
   return (
     <div>
       <div>
-        <div className="card m-10 w-1/3 flex mx-auto bg-base shadow-2xl ">
-          <figure className="px-10 pt-10">
+        <div className="card w-3/4 m-10 flex mx-auto bg-base shadow-2xl ">
+          <figure className=" pt-10">
             <img src={foodImage} alt="Shoes" className=" rounded-xl " />
           </figure>
           <div className="card-body  ">
