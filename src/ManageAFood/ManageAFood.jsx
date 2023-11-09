@@ -128,14 +128,14 @@ const ManageAFood = () => {
                               <div className="text-md opacity-80">
                                 Food Id: {requestOnMyDonation._id}
                               </div>
-                              <div className="text-md font-bold text-white opacity-80">
+                              <div className="text-md font-bold  opacity-80">
                                 Requested by: {requestOnMyDonation.receiverName}
                               </div>
-                              <div className="text-md opacity-80 font-bold text-white">
+                              <div className="text-md opacity-80 font-bold ">
                                 Requester Email:{" "}
                                 {requestOnMyDonation.receiverEmail}
                               </div>
-                              <div className="text-md opacity-80 font-bold text-white">
+                              <div className="text-md opacity-80 font-bold ">
                                 Request Date: {requestOnMyDonation.currentTime}
                               </div>
                               <div className="text-md opacity-80">
@@ -162,7 +162,7 @@ const ManageAFood = () => {
                                   .getElementById("my_modal_5")
                                   .showModal()
                               }
-                              className="hover:cursor-pointer    mx-auto select-none rounded-lg bg-gradient-to-tr from-[#32a374] to-[#57b38d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-80 disabled:shadow-none"
+                              className="hover:cursor-pointer    mx-auto select-none rounded-lg bg-gradient-to-tr from-[#32a374] to-[#57b38d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase  shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-80 disabled:shadow-none"
                             >
                               Change Status
                             </button>
@@ -198,7 +198,7 @@ const ManageAFood = () => {
                                   </option>
                                 </select>
                                 <input
-                                  className="hover:cursor-pointer block my-10 mx-auto select-none rounded-lg bg-gradient-to-tr from-[#32a374] to-[#57b38d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                  className="hover:cursor-pointer block my-10 mx-auto select-none rounded-lg bg-gradient-to-tr from-[#32a374] to-[#57b38d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase  shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                   type="submit"
                                   value="Deliver"
                                 />

@@ -67,7 +67,7 @@ export const router = createBrowserRouter([
       {
         path: "/available-foods",
         element: <AvailableFoods></AvailableFoods>,
-        loader: () => fetch("http://localhost:5000/available-foods"),
+        // loader: () => fetch(`http://localhost:5000/available-foods?sort=${asc? "asc":"desc"}`),
       },
       {
         path: "/available-foods/:id",
