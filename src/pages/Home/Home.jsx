@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import CustomFoodReq from "../../ExtraSections/OurFeatures/CustomFoodReq/CustomFoodReq";
 import OurFeatures from "../../ExtraSections/OurFeatures/OurFeatures";
 import FeaturedFoods from "../../Featured/FeaturedFoods";
-import ThemeSwitcher from "../../Theme/ThemeSwitcher";
+
 import Banner from "./Banner/Banner";
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
       <Helmet>
         <title>ZeroHunger</title>
       </Helmet>
-      <ThemeSwitcher></ThemeSwitcher>
+
       <Banner></Banner>
 
       <FeaturedFoods></FeaturedFoods>
