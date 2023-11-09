@@ -35,7 +35,7 @@ const SingleFood = () => {
     const receiverImage = user?.photoURL;
     const receiverName = user?.displayName;
     const requestedId = _id;
-    const requestStatus = 'Pending'
+    const requestStatus = "Pending";
 
     const foodRequestInfo = {
       requestedId,
@@ -79,6 +79,18 @@ const SingleFood = () => {
             title: "Request Sent",
             showConfirmButton: false,
             timer: 1500,
+          });
+        } else if (data.error) {
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "This food is already requested",
+            showConfirmButton: false,
+            timer: 1500,
+            customClass: {
+              // Use Tailwind CSS classes to adjust the z-index
+              popup: "z-50", // Adjust the z-index as needed
+            },
           });
         }
       });
@@ -126,7 +138,7 @@ const SingleFood = () => {
               {`${donatorEmail}`}
             </p>
 
-            <div className="card-actions  ">
+            <div className="card-actions">
               {/* Open the modal using document.getElementById('ID').showModal() method */}
               <button
                 className=" w-full mt-10 mb-3 btn btn-primary"
@@ -138,9 +150,9 @@ const SingleFood = () => {
               </button>
               <dialog
                 id="my_modal_5"
-                className="modal modal-bottom sm:modal-middle"
+                className="z-40 modal modal-bottom sm:modal-middle"
               >
-                <div className="modal-box">
+                <div className="modal-box ">
                   <div>
                     <div className="card   bg-base  ">
                       <figure className="px-10 pt-10">
@@ -188,7 +200,9 @@ const SingleFood = () => {
                           {`${donatorEmail}`}
                         </p>
                         <p>
-                          <span className="font-bold">Current Time in Ms: </span>
+                          <span className="font-bold">
+                            Current Time in Ms:{" "}
+                          </span>
                           {`${currentTimeInMs}`}
                         </p>
                         <p>

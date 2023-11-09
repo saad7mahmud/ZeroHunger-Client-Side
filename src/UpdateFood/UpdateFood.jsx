@@ -63,7 +63,13 @@ const UpdateFood = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          Swal.fire("Food Successfully Updated");
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Food Successfully Updated",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       });
   };

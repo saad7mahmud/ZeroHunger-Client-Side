@@ -69,7 +69,21 @@ const ManageAFood = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          Swal.fire("Food Successfully Delivered");
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Food Successfully Delivered",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        } else if (data.modifiedCount === 0) {
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Already Delivered",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       });
   };
