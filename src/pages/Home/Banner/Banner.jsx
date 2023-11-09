@@ -1,9 +1,24 @@
+import { motion } from "framer-motion";
+
 const Banner = () => {
+  const hoverAnimation = {
+    hover: {
+      scale: 0.5, // Scale the image to 110% on hover
+      transition: { duration: 0.2 },
+    },
+    rest: {
+      scale: 1, // Return to the original size when not hovered
+    },
+  };
+
   return (
-    <div className=" p-2 overflow-hidden ">
-      <div data-aos="fade-left" className=" mt-10 mb-10   bg-base-200">
+    <div className="p-2 overflow-hidden">
+      <div data-aos="fade-left" className="mt-10 mb-10 bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse p-10">
-          <img
+          <motion.img
+            initial="rest"
+            whileHover="hover"
+            variants={hoverAnimation}
             src="https://i.ibb.co/5cXdVdF/food-bloggers.jpg"
             className="max-w-xl w-1/2 rounded-lg shadow-2xl"
           />
@@ -16,7 +31,7 @@ const Banner = () => {
                 Eliminating Hunger.
               </span>
             </h1>
-            <p className="py-6 font-light ">
+            <p className="py-6 font-light">
               At ZeroHunger, we are on a mission to create a world where no one
               has to go to bed hungry. Our platform is a hub for communities to
               come together and share surplus food,
