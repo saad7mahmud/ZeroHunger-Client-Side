@@ -29,8 +29,9 @@ const ManageMyFoods = () => {
 
   console.log(emailBasedDonatedFoods);
 
-  const handleManageFood = () => {
-    console.log("clicked");
+  const handleManageFood = (id) => {
+    console.log("clicked", id);
+    
   };
 
   const { user } = useContext(AuthContext);
@@ -140,10 +141,12 @@ const ManageMyFoods = () => {
                       </button>
                       <Link
                         className="m-2"
-                        to={`/manage-a-food/${emailBasedDonatedFood._id}`}
+                        to={`/manage-my-food/${emailBasedDonatedFood._id}`}
                       >
                         <button
-                          onClick={() => handleManageFood()}
+                          onClick={() =>
+                            handleManageFood(emailBasedDonatedFood._id)
+                          }
                           className="hover:cursor-pointer   mx-auto select-none rounded-lg bg-gradient-to-tr from-[#327fa3] to-[#57a1b3] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         >
                           Manage

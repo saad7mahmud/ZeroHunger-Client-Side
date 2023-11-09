@@ -58,8 +58,10 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/manage-a-food/:id",
+        path: "/manage-my-food/:id",
         element: <ManageAFood></ManageAFood>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/manage-my-food/${params.id}`),
       },
 
       {

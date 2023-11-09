@@ -18,9 +18,10 @@ const MyFoodRequest = () => {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
+      cancelButtonText: "Go Back",
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Cancel Food Request",
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(`http://localhost:5000/requested-food-delete/${id}`, {
@@ -31,8 +32,8 @@ const MyFoodRequest = () => {
             console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire({
-                title: "Deleted!",
-                text: "Your requested food has been deleted.",
+                title: "Cancelled!",
+                text: "Your food request is cancelled.",
                 icon: "success",
               });
 
@@ -63,6 +64,7 @@ const MyFoodRequest = () => {
     receiverDonateMoney,
     currentTimeInMs,
     currentTime,
+    requestStatus,
   } = requestedFoods;
 
   const { user } = useContext(AuthContext);
@@ -128,18 +130,21 @@ const MyFoodRequest = () => {
                             Receiver Donation: $
                             {requestedFood.receiverDonateMoney}
                           </div>
+                          <div className="text-sm opacity-50">
+                            Food Status: {requestedFood.foodStatus}
+                          </div>
                         </div>
                       </div>
                     </td>
 
                     <td>
-                      <p className="text-white text-center  bg-[#3250a3]">
-                        Status: {requestedFood.foodStatus}
+                      <p className="m-2 p-3 font-bold rounded-lg text-white text-center  bg-[#a3324a]">
+                        Request Status: {requestedFood.requestStatus}
                       </p>
                     </td>
 
                     <th>
-                      {requestedFood.foodStatus !== "Delivered" ? (
+                      {requestedFood.requestStatus !== "Delivered" ? (
                         <button
                           onClick={() => handleRequestDelete(requestedFood._id)}
                           className="hover:cursor-pointer block my-10 mx-auto select-none rounded-lg bg-gradient-to-tr from-[#32a374] to-[#57b38d] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"

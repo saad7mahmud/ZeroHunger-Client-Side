@@ -32,8 +32,10 @@ const SingleFood = () => {
     const noteByReceiver = form.noteByReceiver.value;
     const receiverDonateMoney = form.receiverDonateMoney.value;
     const receiverEmail = user?.email;
+    const receiverImage = user?.photoURL;
     const receiverName = user?.displayName;
     const requestedId = _id;
+    const requestStatus = 'Pending'
 
     const foodRequestInfo = {
       requestedId,
@@ -46,6 +48,7 @@ const SingleFood = () => {
       foodStatus,
       additionalDonatorNotes,
       donatorName,
+      receiverImage,
       donatorEmail,
       donatorImage,
       receiverEmail,
@@ -54,16 +57,9 @@ const SingleFood = () => {
       receiverDonateMoney,
       currentTimeInMs,
       currentTime,
+      requestStatus,
     };
     console.log(foodRequestInfo);
-
-    // Swal.fire({
-    //   position: "top-end",
-    //   icon: "success",
-    //   title: "Request Sent",
-    //   showConfirmButton: false,
-    //   timer: 1500,
-    // });
 
     //   Send Food Request Data to Server Side
     fetch("http://localhost:5000/requested-foods", {
@@ -192,9 +188,7 @@ const SingleFood = () => {
                           {`${donatorEmail}`}
                         </p>
                         <p>
-                          <span className="font-bold">
-                            Current Time in Ms:{" "}
-                          </span>
+                          <span className="font-bold">Current Time in Ms: </span>
                           {`${currentTimeInMs}`}
                         </p>
                         <p>
