@@ -19,7 +19,7 @@ function ThemeSwitcher() {
   };
 
   return (
-    <div className="flex gap-3 justify-end">
+    <div className="flex gap-3 my-5 justify-end">
       <p className="px-2">Switch Theme: </p>
       <label>
         <input

@@ -15,7 +15,7 @@ const AvailableFoods = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/available-foods?search=${search}&sort=${
+      `https://zero-hunger-server-five.vercel.app/available-foods?search=${search}&sort=${
         asc ? "asc" : "desc"
       }`
     )

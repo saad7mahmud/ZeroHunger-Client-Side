@@ -62,7 +62,7 @@ const SingleFood = () => {
     console.log(foodRequestInfo);
 
     //   Send Food Request Data to Server Side
-    fetch("http://localhost:5000/requested-foods", {
+    fetch("https://zero-hunger-server-five.vercel.app/requested-foods", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -7,7 +7,8 @@ const FeaturedFoods = () => {
   const slicedAvailableFoods = availableFood.slice(0, 6);
   console.log(slicedAvailableFoods);
 
-  const url = "http://localhost:5000/available-foods-feature";
+  const url =
+    "https://zero-hunger-server-five.vercel.app/available-foods-feature";
 
   useEffect(() => {
     fetch(url)

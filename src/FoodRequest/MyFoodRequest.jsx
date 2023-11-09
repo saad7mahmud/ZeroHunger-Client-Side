@@ -25,9 +25,12 @@ const MyFoodRequest = () => {
       confirmButtonText: "Cancel Food Request",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/requested-food-delete/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://zero-hunger-server-five.vercel.app/requested-food-delete/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -69,7 +72,7 @@ const MyFoodRequest = () => {
   } = requestedFoods;
 
   const { user } = useContext(AuthContext);
-  const url = `http://localhost:5000/requested-foods?receiverEmail=${user?.email}`;
+  const url = `https://zero-hunger-server-five.vercel.app/requested-foods?receiverEmail=${user?.email}`;
 
   useEffect(() => {
     fetch(url)

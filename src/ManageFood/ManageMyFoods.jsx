@@ -14,7 +14,7 @@ const ManageMyFoods = () => {
   );
 
   const { user } = useContext(AuthContext);
-  const url = `http://localhost:5000/available-foods?donatorEmail=${user?.email}`;
+  const url = `https://zero-hunger-server-five.vercel.app/available-foods?donatorEmail=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -35,9 +35,12 @@ const ManageMyFoods = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/available-foods-delete/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://zero-hunger-server-five.vercel.app/available-foods-delete/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

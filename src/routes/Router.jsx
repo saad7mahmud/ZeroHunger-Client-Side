@@ -61,13 +61,15 @@ export const router = createBrowserRouter([
         path: "/manage-my-food/:id",
         element: <ManageAFood></ManageAFood>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/manage-my-food/${params.id}`),
+          fetch(
+            `https://zero-hunger-server-five.vercel.app/manage-my-food/${params.id}`
+          ),
       },
 
       {
         path: "/available-foods",
         element: <AvailableFoods></AvailableFoods>,
-        // loader: () => fetch(`http://localhost:5000/available-foods?sort=${asc? "asc":"desc"}`),
+        // loader: () => fetch(`https://zero-hunger-server-five.vercel.app/available-foods?sort=${asc? "asc":"desc"}`),
       },
       {
         path: "/available-foods/:id",
@@ -77,13 +79,17 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/available-foods/${params.id}`),
+          fetch(
+            `https://zero-hunger-server-five.vercel.app/available-foods/${params.id}`
+          ),
       },
       {
         path: "/update-food/:id",
         element: <UpdateFood></UpdateFood>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/available-foods-update/${params.id}`),
+          fetch(
+            `https://zero-hunger-server-five.vercel.app/available-foods-update/${params.id}`
+          ),
       },
     ],
   },

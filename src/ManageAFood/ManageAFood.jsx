@@ -40,7 +40,7 @@ const ManageAFood = () => {
   const userEmail = user?.email;
   const reqID = data[0]?.requestedId;
 
-  const url = `http://localhost:5000/requested-foods-select?donatorEmail=${userEmail}&requestedId=${reqID}`;
+  const url = `https://zero-hunger-server-five.vercel.app/requested-foods-select?donatorEmail=${userEmail}&requestedId=${reqID}`;
 
   useEffect(() => {
     fetch(url)
@@ -56,7 +56,7 @@ const ManageAFood = () => {
     const requestStatusObj = { requestStatus };
 
     fetch(
-      `http://localhost:5000/deliver-status-update/${data[0]?.requestedId}`,
+      `https://zero-hunger-server-five.vercel.app/deliver-status-update/${data[0]?.requestedId}`,
       {
         method: "PUT",
         headers: {

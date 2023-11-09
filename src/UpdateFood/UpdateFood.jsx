@@ -52,13 +52,16 @@ const UpdateFood = () => {
     console.log("update", _id, updateFoodInfo);
 
     //   send this data to update
-    fetch(`http://localhost:5000/available-foods-update/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateFoodInfo),
-    })
+    fetch(
+      `https://zero-hunger-server-five.vercel.app/available-foods-update/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateFoodInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
