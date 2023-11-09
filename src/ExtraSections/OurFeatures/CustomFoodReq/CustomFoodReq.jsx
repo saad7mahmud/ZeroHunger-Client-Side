@@ -42,7 +42,7 @@ const CustomFoodReq = () => {
       <div className="my-10 border w-4/5 max-w-md mx-auto p-4 bg-base shadow-md rounded-lg">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="name" className="block text-white">
+            <label htmlFor="name" className="block ">
               Food Name:
             </label>
             <input
@@ -56,7 +56,7 @@ const CustomFoodReq = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-white">
+            <label htmlFor="email" className="block ">
               Your Email:
             </label>
             <input
@@ -70,7 +70,7 @@ const CustomFoodReq = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="feedback" className="block text-white">
+            <label htmlFor="feedback" className="block ">
               Please give a little description:
             </label>
             <textarea
@@ -86,7 +86,7 @@ const CustomFoodReq = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-[#57b38d] text-white rounded-md py-2 px-4 hover:bg-[#32a374] focus:outline-none focus:ring focus:border-blue-300"
+              className="bg-[#57b38d]  rounded-md py-2 px-4 hover:bg-[#32a374] focus:outline-none focus:ring focus:border-blue-300"
             >
               Send Request
             </button>

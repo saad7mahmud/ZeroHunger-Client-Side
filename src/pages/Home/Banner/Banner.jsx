@@ -5,7 +5,7 @@ const Banner = () => {
         <div className="hero-content flex-col lg:flex-row-reverse p-10">
           <img
             src="https://i.ibb.co/5cXdVdF/food-bloggers.jpg"
-            className="max-w-xl rounded-lg shadow-2xl"
+            className="max-w-xl w-1/2 rounded-lg shadow-2xl"
           />
           <div>
             <h1 className="text-3xl font-light">

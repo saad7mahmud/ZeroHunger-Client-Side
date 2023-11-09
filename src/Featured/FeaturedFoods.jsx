@@ -31,7 +31,7 @@ const FeaturedFoods = () => {
         align="center"
       />
 
-      <div className="grid gap-4 m-10 grid-cols-3">
+      <div className="grid gap-4 m-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {slicedAvailableFoods.map((slicedAvailableFood) => (
           <div className="" key={slicedAvailableFood._id}>
             <div className="">
@@ -101,7 +101,7 @@ const FeaturedFoods = () => {
       <div>
         <Link to="/available-foods">
           <button className=" mx-auto flex mt-10 mb-3 btn btn-primary">
-            View All Available Foods 
+            View All Available Foods
           </button>
         </Link>
       </div>
