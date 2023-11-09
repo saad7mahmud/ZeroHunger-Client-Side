@@ -3,6 +3,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import { useEffect } from "react";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyFoodRequest = () => {
   const [requestedFoodsPrev, setRequestedFoodsPrev] = useState([]);
@@ -80,6 +81,9 @@ const MyFoodRequest = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>ZeroHunger | Food Request</title>
+      </Helmet>
       <div>
         <h1 className="mt-10 font-bold text-4xl text-center">
           My Requested Foods

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 const ManageMyFoods = () => {
   const [emailBasedDonatedFoodsPrev, setEmailBasedDonatedFoodsPrev] = useState(
     []
@@ -83,6 +84,9 @@ const ManageMyFoods = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>ZeroHunger | Manage My Foods</title>
+      </Helmet>
       <div>
         <h1 className="mt-10 font-bold text-4xl text-center">
           My Donated Foods
